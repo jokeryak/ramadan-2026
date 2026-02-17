@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ramadan 2026 Calendar | Bangladesh</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #0D0D0D;
+    }
+
+    .calendar-container {
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    table {
+      width: 100%;
+      max-width: 900px;
+      margin: auto;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px 10px;
+      border: 1px solid #222;
+    }
+
+    th {
+      background: #111;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background: #141414;
+    }
+  </style>
+</head>
+<body>
+
+<div class="calendar-container">
+  <h1>Ramadan 2026 Calendar</h1>
+  <p>Bangladesh (Expected Dates)</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Day</th>
+        <th>Gregorian Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <script>
+        // Start date: 18 Feb 2026 (1 Ramadan)
+        let start = new Date("February 18, 2026");
+
+        for(let i = 1; i <= 30; i++) {
+          let d = new Date(start);
+          d.setDate(start.getDate() + (i - 1));
+
+          let options = { 
+            month: "long",
+            day: "numeric",
+            year: "numeric"
+          };
+
+          document.write(`
+            <tr>
+              <td>Day ${i}</td>
+              <td>${d.toLocaleDateString("en-US", options)}</td>
+            </tr>
+          `);
+        }
+      </script>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

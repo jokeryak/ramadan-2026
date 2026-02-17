@@ -1,4 +1,4 @@
-const ramadanDate = new Date("March 18, 2026 00:00:00").getTime();
+const ramadanDate = new Date("February 19, 2026 00:00:00").getTime();
 
 const timer = setInterval(function () {
 
@@ -21,3 +21,21 @@ const timer = setInterval(function () {
   }
 
 }, 1000);
+
+function showTodayDate() {
+  const today = new Date();
+
+  const options = { 
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+
+  const formattedDate = today.toLocaleDateString('en-US', options);
+
+  document.getElementById("todayDate").innerText = 
+    "Today: " + formattedDate;
+}
+
+showTodayDate();
